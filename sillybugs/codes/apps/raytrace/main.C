@@ -324,7 +324,6 @@ int	main(int argc, CHAR *argv[])
 
     MaxGlobMem <<= 20;			/* Convert MB to bytes.      */
     MAIN_INITENV(,MaxGlobMem + 512*1024)
-		gb = sizeof(GMEM);
     gm = (GMEM *)G_MALLOC(sizeof(GMEM));
 
 
