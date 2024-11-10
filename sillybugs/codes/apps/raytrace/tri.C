@@ -92,8 +92,8 @@ VOID	TriPrint(OBJECT *po)
 
         pe++; } }
 
-volatile int vec_stat=0;
-#define TriPeVec(a,b,c) for(int i=0;i<1000;i++) vec_stat++;
+// volatile int vec_stat=0;
+// #define TriPeVec(a,b,c) for(int i=0;i<1000;i++) vec_stat++;
 
 /*
  * NAME
@@ -377,7 +377,7 @@ INT	TriPeIntersect(RAY *pr, ELEMENT *pe, IRECORD *hit)
     tval = -(pt->d + Ro_dot_Pn)/Rd_dot_Pn;	/* Intersection distance.    */
     if (tval < RAYEPS)			/* Intersects behind ray.    */
         return (0);
-		//TriPeVec(e1,e2,e3);
+		TriPeVec(e1,e2,e3);
 
     /*
      *	This algorithm works for vertices in counter-clockwise order,
