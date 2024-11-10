@@ -292,9 +292,6 @@ int	main(int argc, CHAR *argv[])
     {   Usage();
         exit(1); }
 
-		for(int i=0;i<1000000000;i++) {
-			dummy++; // useless increment
-		}
 		
     /*
      *	Make sure nprocs is within valid range.
