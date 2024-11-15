@@ -26,4 +26,5 @@ int main () {
         fprintf(stderr, "Failed to close the epoll");
             return 1;
     }
+    fprintf(stdout, "BRUH!");
 }
