@@ -17,7 +17,7 @@ void error(const char *errmsg){
 }
 
 int main () {
-    int epoll_fd == epoll_create(0);
+    int epoll_fd == epoll_create1(0);
     if (epoll_fd == -1){
         fprintf(stderr, "Could not create epoll file descirptor! \n");
         return 1;
