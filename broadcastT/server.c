@@ -21,6 +21,9 @@ int main () {
     if (epoll_fd == -1){
         fprintf(stderr, "Could not create epoll file descriptor! \n");
         return 1;
+    }else{
+        fprintf(stderr, "TESTING");
+    
     }
     if(close(epoll_fd)){
         fprintf(stderr, "Failed to close the epoll");
