@@ -23,7 +23,7 @@ int main () {
         return 1;
     }
     if(close(epoll_fd)){
-        fprintf(stderr, "Failed to close the epoll")
+        fprintf(stderr, "Failed to close the epoll");
             return 1;
     }
 }
