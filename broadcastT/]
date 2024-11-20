@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <netinet/in.h>
+#include <sys/epoll.h>
+
+#define MAX_CLIENTS 20
+
+int client_soc[MAX_CLIENTS];
+
+int num_clients = 0;
+
+void error(const char *errmsg){
+    perror(errmsg);
+    exit(1);
+}
+
+int main () {
+    int arg;
+    struct epoll_event event;
+    int epoll_fd = epoll_create1(0);
+    char *pvalue = NULL;
+
+
+
+    if (epoll_fd == -1){
+        fprintf(stderr, "Could not create epoll file descriptor! \n");
+        return 1;
+    }
+    // we are listening for some inp
+    event.events = EPOLLIN;
+
+    if(close(epoll_fd)){
+        fprintf(stderr, "Failed to close the epoll");
+            return 1;
+    }
+    // returns -1 when all args are parsed
+    while ((arg = getopt(argc, argv, "p:")) != -1){
+        switch (arg)  {
+            case 'p':
+                pvalue = optarg;
+                break;
+            case '?':
+                if (optopt == 'p')
+                    fprintf(stderr, "Option -%c requires an argument.\n", optopt);
+                return 1;
+            defualt:
+                abort();
+        }
+    }
+    if (pvalj)
+    return 0;
+}
+
