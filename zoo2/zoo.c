@@ -113,6 +113,7 @@ Animal* createAnimal(const char* name, const char* species, int age) {
     newAnimal->name = tempName; 
     newAnimal->species = species;
     newAnimal->age = age;
+    free(tempName);
     return newAnimal;
 }
 
