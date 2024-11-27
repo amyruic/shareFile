@@ -110,6 +110,7 @@ Animal* createAnimal(const char* name, const char* species, int age) {
         return NULL;
     }
     newAnimal->name = strdup(name); 
+    free(newAnimal);
     newAnimal->species = species;
     newAnimal->age = age;
     return newAnimal;
