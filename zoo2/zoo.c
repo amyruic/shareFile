@@ -109,8 +109,8 @@ Animal* createAnimal(const char* name, const char* species, int age) {
         printf("Memory allocation failed\n");
         return NULL;
     }
-    newAnimal->name = strdup(name); 
-    free(newAnimal);
+    char *tempName = strdup(name);
+    newAnimal->name = tempName; 
     newAnimal->species = species;
     newAnimal->age = age;
     return newAnimal;
