@@ -157,9 +157,7 @@ Animal* findAnimalByName(DoublyLinkedList* list, const char* name) {
 // Rename an existing animal
 void renameAnimal(Animal* animal, const char* newName) {
     if (animal != NULL) {
-        char *tempName = strdup(newName);
-        animal->name = tempName;
-        free(tempName);
+        animal->name = strdup(newName); // Assign the new name
     }
 }
 
