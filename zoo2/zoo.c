@@ -203,7 +203,6 @@ void simulateDeaths(DoublyLinkedList* list) {
 
 int main() {
     DoublyLinkedList* list = createList();
-    
     printf("Using %ld bytes before populating zoo\n",mallinfo2().uordblks);
     populateZoo(list);
     
@@ -229,9 +228,9 @@ int main() {
     printf("Using %ld bytes before cleaning up.\n",mallinfo2().uordblks);
 
     while (list->head != NULL) {
-        removeElement(list, list->head);
+        free(removeElement(list, list->head));
     }
-    free(list);
+    
     printf("Using %ld bytes after cleaning up\n",mallinfo2().uordblks);
     return 0;
 }
