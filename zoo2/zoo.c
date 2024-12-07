@@ -230,7 +230,7 @@ int main() {
     while (list->head != NULL) {
         free(removeElement(list, list->head));
     }
-    
+   // test 
     printf("Using %ld bytes after cleaning up\n",mallinfo2().uordblks);
     return 0;
 }
